@@ -10,78 +10,78 @@ const products = [
     id: 1,
     name: "Purple Floral Print",
     category: "Maria B Lawn 3pc",
-    price: "PKR 5,500",
-    image:
+    media:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-13%20at%209.43.28%20PM-9EFSKlA5Fx25UWfEOHbUQFnl5GOnxA.jpeg",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=1",
   },
   {
     id: 2,
     name: "Magenta Bandhani",
     category: "Maria B Lawn 3pc",
-    price: "PKR 5,500",
-    image:
+    media:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-13%20at%209.43.27%20PM-mAMYg4yvUcIoF6Ej8aH9WNSnxbYcMi.jpeg",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=2",
   },
   {
     id: 3,
     name: "Beige Floral Garden",
     category: "Maria B Lawn 3pc",
-    price: "PKR 5,500",
-    image:
+    media:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-13%20at%209.43.26%20PM-mOLmAEwPuOoPFgaj5QtJiMASQe5CHK.jpeg",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=3",
   },
   {
     id: 4,
     name: "Pink Blossom",
     category: "Maria B Lawn 3pc",
-    price: "PKR 5,500",
-    image:
+    media:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-13%20at%209.43.29%20PM-t5Wkicwfeh3TdNVqr2eNV2I4Ow7ove.jpeg",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=4",
   },
   {
     id: 5,
     name: "Purple Embroidered",
     category: "Maria B Unstitched",
-    price: "PKR 3,000",
-    image: "/maria-b-purple-embroidered.png",
+    media: "/maria-b-purple-embroidered.png",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=5",
   },
   {
     id: 6,
     name: "Red Royal Embroidered",
     category: "Premium Collection",
-    price: "PKR 3,000",
-    image:
+    media:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-14%20at%2010.02.32%20PM-FvAWn0JZCRfuWuM31Yw48YQnFLGCxk.jpeg",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=6",
   },
   {
     id: 7,
     name: "Teal Tropical Paradise",
     category: "Designer Lawn",
-    price: "PKR 5,800",
-    image:
+    media:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-14%20at%209.58.52%20PM-MCi3t4tmIIm3vYacqBLDYJhBPJigtE.jpeg",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=7",
   },
   {
     id: 8,
     name: "Black Floral Art",
     category: "Designer Collection",
-    price: "PKR 5,500",
-    image:
+    media:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-04-14%20at%2011.25.40%20PM-RUS3iOga3471CkZmwjpktR7Uxki52E.jpeg",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=8",
   },
   {
     id: 9,
     name: "Black Embroidered",
     category: "Maria B Unstitched",
-    price: "PKR 3,000",
-    image: "/maria-b-black-embroidered.png",
+    media: "/maria-b-black-embroidered.png",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=9",
   },
   {
     id: 10,
     name: "Blue Embroidered",
     category: "Maria B Unstitched",
-    price: "PKR 3,000",
-    image: "/maria-b-blue-embroidered.png",
+    media: "/maria-b-blue-embroidered.png",
+    link: "https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo&product=10",
   },
 ];
 
@@ -106,7 +106,7 @@ function ProductCard({
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-muted mb-4">
         <Image
-          src={product.image}
+          src={product.media}
           alt={product.name}
           fill
           className="object-cover transition-all duration-700 group-hover:scale-110"
@@ -115,7 +115,7 @@ function ProductCard({
 
         {/* Quick Order Button */}
         <Link
-          href="https://www.instagram.com/lumetrends?igsh=amhscmNzYWo5YXRo"
+          href={product.link}
           target="_blank"
           rel="noopener noreferrer"
           className="absolute bottom-4 left-4 right-4 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 text-sm font-medium opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
@@ -132,7 +132,15 @@ function ProductCard({
         <h3 className="font-serif text-lg font-medium text-foreground group-hover:text-accent transition-colors duration-300">
           {product.name}
         </h3>
-        <p className="text-sm font-medium text-foreground">{product.price}</p>
+        <Link
+          href={product.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors duration-300"
+        >
+          <Instagram className="w-4 h-4" />
+          View Product Link
+        </Link>
       </div>
     </div>
   );

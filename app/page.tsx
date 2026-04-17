@@ -1,21 +1,7 @@
-import { Header } from "@/components/header";
-import { Hero } from "@/components/hero";
-import { Collection } from "@/components/collection";
-import { HowToOrder } from "@/components/how-to-order";
-import { Featured } from "@/components/featured";
-import { About } from "@/components/about";
-import { Footer } from "@/components/footer";
+import { AffiliateLanding } from "@/components/affiliate-landing";
+import { getProducts } from "@/lib/products";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <Header />
-      <Hero />
-      <Collection />
-      <HowToOrder />
-      <Featured />
-      <About />
-      <Footer />
-    </main>
-  );
+export default async function Home() {
+  const products = await getProducts();
+  return <AffiliateLanding products={products} />;
 }
