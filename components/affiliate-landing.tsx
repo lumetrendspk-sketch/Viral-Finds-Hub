@@ -129,7 +129,7 @@ export function AffiliateLanding({ products }: { products: Product[] }) {
             No pieces match your search. Try another term or category.
           </p>
         ) : (
-          <div className="grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-8 lg:grid-cols-4 lg:gap-10">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-8 lg:grid-cols-4 lg:gap-10">
             {filteredProducts.map((product) => (
               <article
                 key={product.id}
