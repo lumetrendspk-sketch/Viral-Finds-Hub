@@ -4,25 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.97 0.005 80);
-  --foreground: oklch(0.2 0.02 50);
-  --card: oklch(0.99 0.002 80);
-  --card-foreground: oklch(0.2 0.02 50);
-  --popover: oklch(0.99 0.002 80);
-  --popover-foreground: oklch(0.2 0.02 50);
-  --primary: oklch(0.25 0.02 50);
-  --primary-foreground: oklch(0.98 0.005 80);
-  --secondary: oklch(0.94 0.008 80);
-  --secondary-foreground: oklch(0.25 0.02 50);
-  --muted: oklch(0.92 0.008 80);
-  --muted-foreground: oklch(0.5 0.01 50);
-  --accent: oklch(0.55 0.08 45);
-  --accent-foreground: oklch(0.98 0.005 80);
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.21 0 0);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.21 0 0);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.21 0 0);
+  --primary: oklch(0.2 0 0);
+  --primary-foreground: oklch(0.995 0 0);
+  --secondary: oklch(0.965 0 0);
+  --secondary-foreground: oklch(0.21 0 0);
+  --muted: oklch(0.955 0 0);
+  --muted-foreground: oklch(0.52 0 0);
+  --accent: oklch(0.67 0.03 83);
+  --accent-foreground: oklch(0.18 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.01 80);
-  --input: oklch(0.92 0.008 80);
-  --ring: oklch(0.55 0.08 45);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.67 0.03 83);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -77,7 +77,11 @@
 @theme inline {
   --font-sans: var(--font-sans), 'Inter', system-ui, sans-serif;
   --font-serif: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
+  --font-display: var(--font-playfair), 'Playfair Display', ui-serif, Georgia, serif;
+  --font-nav: var(--font-montserrat), 'Montserrat', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-boutique-gold: #a39061;
+  --color-boutique-gold-muted: #c4b896;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -122,5 +126,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
   }
 }

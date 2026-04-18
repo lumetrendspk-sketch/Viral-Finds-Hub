@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { Cormorant_Garamond, Inter, Montserrat, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -13,6 +13,18 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans"
 });
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+})
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
+})
 
 export const metadata: Metadata = {
   title: "Outfit Inspo World | Affiliate Picks",
@@ -44,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable} ${playfair.variable} ${montserrat.variable}`}>
       <body className="font-sans antialiased bg-background">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
