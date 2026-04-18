@@ -26,10 +26,32 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 })
 
+const siteName = "Viral Finds Hub"
+const siteDescription =
+  "Discover curated affiliate picks across Bags, Shoes, Beauty, Jewelry, and Clothes."
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://viralfindshub.com"
+
 export const metadata: Metadata = {
-  title: "Outfit Inspo World | Affiliate Picks",
-  description:
-    "Discover curated affiliate picks across Bags, Shoes, Beauty, Jewelry, and Clothes.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${siteName} | Affiliate Picks`,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  applicationName: siteName,
+  openGraph: {
+    title: `${siteName} | Affiliate Picks`,
+    description: siteDescription,
+    url: siteUrl,
+    siteName,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteName} | Affiliate Picks`,
+    description: siteDescription,
+  },
   generator: 'v0.app',
   icons: {
     icon: [
